@@ -7,6 +7,7 @@ import tag
 import tag_length
 import comment
 import comment_length
+import duration
 
 idgenerate.generate_save_id()
 size.generate_size()
@@ -17,3 +18,4 @@ tag.generate_tag()
 comment.generate_comment()
 comment_length.generate_comment_length()
 tag_length.generate_tag_length()
+duration.generate_duration()
