@@ -1,4 +1,4 @@
-import idgenerate,size,magicnum,typegenerate,direction,tag,tag_length,comment,comment_length,duration,currency,datetimeorder
+import idgenerate,size,magicnum,typegenerate,direction,tag,tag_length,comment,comment_length,duration,currency,datetimeorder,statusgenerate
 
 idgenerate.generate_save_id()
 size.generate_size()
@@ -12,3 +12,4 @@ tag_length.generate_tag_length()
 duration.generate_duration()
 currency.generate_currency()
 datetimeorder.date_time()
+statusgenerate.status_gen()
