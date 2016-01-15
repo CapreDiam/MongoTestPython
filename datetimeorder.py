@@ -11,12 +11,12 @@ def date_time():
 	while i < 3000:
 		file.write('"' + str(year) + '\\' + str(month) + '\\' + str(day) +' '+ str(hours) + ':' + str(minute) + ':' + str(second) + '.' + str(millisecond)+'"' +'\n')
 		i = i + 1
-		if((millisecond+10)>999):
+		if((millisecond+5)>999):
 			millisecond=1
 			second = second + 1
 		chekHMS(second, minute) 
 		chekHMS(minute, hours)
-		millisecond = millisecond + 10
+		millisecond = millisecond + 4
 	file.close()	
 
 def chekHMS(HMSchek, HMSincr):
