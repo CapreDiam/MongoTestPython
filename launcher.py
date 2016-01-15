@@ -1,15 +1,4 @@
-import idgenerate
-import size
-import magicnum
-import typegenerate
-import direction
-import tag
-import tag_length
-import comment
-import comment_length
-import duration
-import currency
-import datetime_gen
+import idgenerate,size,magicnum,typegenerate,direction,tag,tag_length,comment,comment_length,duration,currency,datetimeorder
 
 idgenerate.generate_save_id()
 size.generate_size()
@@ -22,4 +11,4 @@ comment_length.generate_comment_length()
 tag_length.generate_tag_length()
 duration.generate_duration()
 currency.generate_currency()
-datetime_gen.date_time()
+datetimeorder.date_time()
