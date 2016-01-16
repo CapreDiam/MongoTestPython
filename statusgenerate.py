@@ -1,13 +1,13 @@
 import random
 def status_gen():
-	file=open('id.txt')
+	file=open('request.txt')
 	ids=file.readlines()
 	file=open('datetime.txt')
 	datetime=file.readlines()
 	file.close()	
 	status = [["New","To Provider","Partially Filled","Filled"],["New", "To Provider", "Filled"],["New","Filled"],["New","Partially Filled","To Provider","Filled"],["New","Partially Filled","To Provider","Rejected","Filled"],["To Provider"],["To Provider","Rejected"],["To Provider","Filled"],["New","To Provider"],["New","To Provider","Rejected"],["New","Partially Filled"],["New"],["New","To Provider","Partially Filled"]]
 	i=0
-	file=open('result','w')
+	file=open('request_final.txt','w')
 	while i<3000:
 		res=ids[i]
 		dt=datetime[i]
