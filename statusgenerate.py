@@ -14,6 +14,6 @@ def status_gen():
 		a=random.randint(0,12)
 		b=len(status[a])
 		for x in range(b):		
-			file.write(str(res[0:len(res)-1]) + " date: new Date(" +str(dt[0:len(dt)-1])+'), ' + "status: "+ '"'+status[a][x]+'"'+'}'+']'+'\n')
+			file.write(str(res[0:len(res)-1]) + " date: new Date(" +str(dt[0:len(dt)-1])+'), ' + "status: "+ '"'+status[a][x]+'"'+'}'+' )'+'\n')
 		i=i+1
 	file.close()	
