@@ -8,7 +8,7 @@ def date_time():
 	second=24
 	millisecond=1
 	file = open('datetime.txt', 'w')
-	while i < 3000:
+	while i < 9000:
 		file.write('"' + str(year) + '\\' + str(month) + '\\' + str(day) +' '+ str(hours) + ':' + str(minute) + ':' + str(second) + '.' + str(millisecond)+'"' +'\n')
 		i = i + 1
 		if((millisecond+5)>999):
