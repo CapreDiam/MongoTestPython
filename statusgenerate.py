@@ -17,7 +17,7 @@ def status_gen():
 		b=len(status[a])
 		for x in range(b):
 			dt=datetime[j]		
-			file.write(str(res[0:len(res)-1]) + " date: new Date(" +str(dt[0:len(dt)-1])+'), ' + "status: "+ '"'+status[a][x]+'"'+'}'+' )'+'\n')
+			file.write(str(res[0:len(res)-1]) + " date: new Date(" +str(dt[0:len(dt)-1])+'), ' + "status: "+ '"'+status[a][x]+'"'+' }'+' )'+'\n')
 			j=j+1
 		i=i+1
 	file.close()	
