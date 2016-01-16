@@ -3,7 +3,7 @@ import random
 
 def generate_comment_length():
 	i=0
-	file = open ('comment_length', 'w')	
+	file = open ('comment_length.txt', 'w')	
 	while i < 3000:
 		file.write('30' + '\n')		
 		i = i + 1
