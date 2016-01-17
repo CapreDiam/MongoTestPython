@@ -1,5 +1,6 @@
-import comment,comment_length,currency,datetimeorder,direction,duration,idgenerate,magicnum,size,statusgenerate,tag,tag_length,typegenerate,generateinsertrequest,Query_generating
+import comment,comment_length,currency,datetimeorder,direction,duration,idgenerate,magicnum,size,statusgenerate,tag,tag_length,typegenerate,generateinsertrequest,Query_generating,clear
 
+clear.clear_db()
 idgenerate.generate_save_id()
 size.generate_size()
 magicnum.generate_magic_num()
