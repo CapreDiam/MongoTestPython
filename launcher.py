@@ -1,4 +1,4 @@
-import comment,comment_length,currency,datetimeorder,direction,duration,idgenerate,magicnum,size,statusgenerate,tag,tag_length,typegenerate,generateinsertrequest
+import comment,comment_length,currency,datetimeorder,direction,duration,idgenerate,magicnum,size,statusgenerate,tag,tag_length,typegenerate,generateinsertrequest,Query_generating
 
 idgenerate.generate_save_id()
 size.generate_size()
@@ -14,3 +14,5 @@ currency.generate_currency()
 duration.generate_duration()
 generateinsertrequest.generate_request()
 statusgenerate.status_gen()
+Query_generating.insert_query()
+Query_generating.write_reslut()
