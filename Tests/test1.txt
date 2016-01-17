@@ -1,7 +1,0 @@
-db.orders.find( { status: "Partially Filled" } ).count()
-db.orders.find( { status: "Filled" } ).count()
-db.orders.find( { status: "To Provider" } ).count()
-db.orders.find( { status: "Rejected" } ).count()
-db.orders.find( { status: "New" } ).count()
-db.orders.aggregate( [ { $match : { provider: "~" } }, { $group: { _id: "$provider", sum: { $sum: "$price" } } } ] )
-db.orders.aggregate( [ { $match : { provider: "*" } }, { $group: { _id: "$provider", sum: { $sum: "$price" } } } ] )
