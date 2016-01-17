@@ -18,6 +18,7 @@ def insert_query():
         file.write( "db.orders.aggregate( [ { $match : { provider: "+'"'+'~'+'"'+" } }, { $group: { _id: "+'"'+"$provider"+'"'+", sum: { $sum: "+'"'+"$price"+'"'+" } } } ] )"+'\n')#Count sum by "~" provider
 	file.write("db.orders.aggregate( { $group: { _id: "+'"'+"$id"+'"'+", count: { $sum: 1 } } }, { $limit: 3 } )"+'\n')#Count id by every status(only for 3 orders) 
 	file.write("db.orders.aggregate( [ { $match : { date: { $gte: new Date("+'"'+"2016"+'\\'+"1"+'\\'+"15 9:12:24.25"+'"'+"),$lte: new Date("+'"'+"2016"+'\\'+"1"+'\\'+"15 9:12:24.725"+'"'+ ") } } }, { $group: { _id: null, count: { $sum: 1 } } } ] )"+'\n')#Count orders between 2 dates
+
         file.close()
         
 
