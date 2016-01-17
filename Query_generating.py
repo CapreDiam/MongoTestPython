@@ -5,7 +5,7 @@ def insert_query():
         statuses = ["New", "To Provider", "Partially Filled","Filled","Rejected"]
         count=len(statuses)
         i=0
-        file = open('querys','w')
+        file = open('Test/querys','w')
         for i in range(count):
                 quer1=status_by_id(str(statuses[i]))#Count id by every status
                 file.write(quer1+'\n')
@@ -18,10 +18,10 @@ def insert_query():
         
 
 def write_reslut():
-        file = open('querys')
+        file = open('Test/querys')
        	buff=file.readlines()
      	i=0
-    	f = open ('results','w')
+    	f = open ('Test/results','w')
 	operation = "mongo < querys"
 	result = commands.getoutput(operation)
 	f.write(result[50:len(result)-3])   
