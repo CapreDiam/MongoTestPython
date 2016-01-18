@@ -1,6 +1,8 @@
-import comment,comment_length,currency,datetimeorder,direction,duration,idgenerate,magicnum,size,statusgenerate,tag,tag_length,typegenerate,generateinsertrequest,Query_generating,clear
+import comment,comment_length,currency,datetimeorder,direction,duration,idgenerate,magicnum,size,statusgenerate,tag,tag_length,typegenerate,generateinsertrequest,Query_generating,clear,result_request_json_data,compare_result
 
+print('prepare tests file....')
 clear.clear_db()
+print('data generation....')
 idgenerate.generate_save_id()
 size.generate_size()
 magicnum.generate_magic_num()
@@ -15,5 +17,9 @@ currency.generate_currency()
 duration.generate_duration()
 generateinsertrequest.generate_request()
 statusgenerate.status_gen()
+print('calculation of data to compare....')
 Query_generating.insert_query()
 Query_generating.write_reslut()
+result_request_json_data.result_tests_data()
+print('compare and result....')
+compare_result.copmares_results()
