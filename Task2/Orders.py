@@ -14,8 +14,7 @@ class Orders:
 			direction(),
 			id(),
 			price(),
-			currency(),
-			date_time(),]
+			currency()]
 
 	def provider(self):
 		return '+'			
@@ -56,8 +55,3 @@ class Orders:
 		checkHMS(second,minute)
 		checkHMS(minute,hours)
 		return datetime	
-
-	
-
-	
-		
