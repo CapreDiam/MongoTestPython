@@ -10,11 +10,6 @@ class Orders:
 		self.minute=[12]
 		self.second=[24]
 		self.millisecond=[1]
-		return [type(),
-			direction(),
-			id(),
-			price(),
-			currency()]
 
 	def provider(self):
 		return '+'			
@@ -46,12 +41,12 @@ class Orders:
 			HMSincr[0] = HMSincr[0] + 1
 
 	def date_time(self):
-		datetime='"' + str(year) + '\\' + str(month) + '\\' + str(day) +\
-		' '+ str(hours[0]) + ':' + str(minute[0]) + ':' + str(second[0]) +\
-		'.' + str(millisecond[0])+'"'+'\n'
-		if((millisecond[0]+5)>999):
-			millisecond[0]=1
-		millisecond[0] = millisecond[0] + 4
-		checkHMS(second,minute)
-		checkHMS(minute,hours)
+		datetime='"' + str(self.year) + '\\' + str(self.month) + '\\' + str(self.day) +\
+		' '+ str(self.hours[0]) + ':' + str(self.minute[0]) + ':' + str(self.second[0]) +\
+		'.' + str(self.millisecond[0])+'"'+'\n'
+		if((self.millisecond[0]+5)>999):
+			self.millisecond[0]=1
+		self.millisecond[0] = self.millisecond[0] + 4
+		self.__checkHMS(self.second,self.minute)
+		self.__checkHMS(self.minute,self.hours)
 		return datetime	
