@@ -1,4 +1,4 @@
-import FXCMOrder,FXOpenOrder,random,Serialization,random
+import FXCMOrder,FXOpenOrder,random,Serialization,random,commands
 
 fxcm=FXCMOrder.FXCMOrder()
 fxopen=FXOpenOrder.FXOpenOrder()
@@ -23,9 +23,14 @@ class request(FXCMOrder.FXCMOrder,FXOpenOrder.FXOpenOrder,Serialization.Serializ
             dt=fxcm.date_time()
             queryForDB=string+" date: new Date(" + str(dt)+')' + " , status: " + '"' + status[a][x] + '"' + ' }' + ' )'                
             request.inserts.append(queryForDB)
-                
-        return request.inserts
+            return request().insert_request(request.inserts)    
+        
+        
+    def insert_request(*inserts):
+        a=len(inserts)
+        for i in range(a):
+            operation = "mongo < "+str(inserts[i])
+            result = commands.getoutput(operation)
+        
 
-a=request()        
-b=a.insert_request_generation()
-print(b)
+a=request()
