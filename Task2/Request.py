@@ -5,8 +5,8 @@ fxopen=FXOpenOrder.FXOpenOrder()
 sereliaz=Serialization.Serialization()
 
 class request(FXCMOrder.FXCMOrder,FXOpenOrder.FXOpenOrder,Serialization.Serialization):
-    #inserts=[]
     results_db=[]
+    results_python=[]
     
     def insert_request_generation(self):
         queryForFXCM = "db.orders.insert( { "+ "provider: "+'"'+ fxcm.provider() +'"'+ " , id: " + '"'+fxcm.id()+'"'+ " , type: " +'"'+ fxcm.type() + '"'+" , price: " + fxcm.price() + " , direction: " +'"'+ fxcm.direction() +'"'+ " , currency: " + '"'+fxcm.currency() +'"'+ ", decsription: " + '"'+fxcm.decsription()+'" ,'
