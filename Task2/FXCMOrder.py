@@ -1,4 +1,5 @@
-class FXCMOrder(Orders):
+import Orders
+class FXCMOrder(Orders.Orders):
 		
 	def provider(self):
 		return '*'
