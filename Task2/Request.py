@@ -22,19 +22,15 @@ class request(FXCMOrder.FXCMOrder,FXOpenOrder.FXOpenOrder,Serialization.Serializ
         for x in range(b):
             dt=fxcm.date_time()
             queryForDB=string+" date: new Date(" + str(dt)+')' + " , status: " + '"' + status[a][x] + '"' + ' }' + ' )' 
-            print(queryForDB)               
-            request.inserts.append(queryForDB)
-        return request().insert_request(request.inserts)    
-        
-        
-    def insert_request(*inserts):
-        a=len(inserts)
-        
-        for i in range(a):
-            operation = '"' +"mongo < "+str(inserts[1][i])+'"'
+            operation = '"' +"mongo < "+queryForDB+'"'
             print(operation)
-            result = commands.getoutput(operation)
+            result = commands.getoutput(operation)                
+        
+   
         
 
-a=request()        
-b=a.insert_request_generation()
+a=request()
+b=0
+while b < 3000:
+    a.insert_request_generation()
+    b=b+1
