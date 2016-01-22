@@ -23,7 +23,7 @@ class request(FXCMOrder.FXCMOrder,FXOpenOrder.FXOpenOrder,Serialization.Serializ
             dt=fxcm.date_time()
             queryForDB=string+" date: new Date(" + str(dt)+')' + " , status: " + '"' + status[a][x] + '"' + ' }' + ' )'                
             request.inserts.append(queryForDB)
-            return request().insert_request(request.inserts)    
+        return request().insert_request(request.inserts)    
         
         
     def insert_request(*inserts):
