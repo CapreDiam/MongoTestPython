@@ -31,6 +31,10 @@ class request(FXCMOrder.FXCMOrder,FXOpenOrder.FXOpenOrder,Serialization.Serializ
         a=len(inserts)
         
         for i in range(a):
-            operation = "mongo < "+str(inserts[1][i])
+            operation = '"' +"mongo < "+str(inserts[1][i])+'"'
             print(operation)
             result = commands.getoutput(operation)
+        
+
+a=request()        
+b=a.insert_request_generation()
