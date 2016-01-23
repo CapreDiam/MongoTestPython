@@ -1,6 +1,8 @@
-import FXCMOrder
-import FXOpenOrder
-import Serialization
+import thread
+
+from FXCMOrder import FXCMOrder
+from FXOpenOrder import FXOpenOrder
+from Serialization import Serialization
 import commands
 import random
 
@@ -8,10 +10,10 @@ import random
 class Request():
 
     def __init__(self):
-        fxcm = FXCMOrder()
-        fxopen = FXOpenOrder()
-        sereliazation = Serialization()
-        status = [["New", "To Provider", "Partially Filled", "Filled"], ["New", "To Provider", "Filled"],
+        self.fxcm = FXCMOrder()
+        self.fxopen = FXOpenOrder()
+        self.sereliazation = Serialization()
+        self.status = [["New", "To Provider", "Partially Filled", "Filled"], ["New", "To Provider", "Filled"],
                   ["New", "Filled"], ["New", "Partially Filled", "To Provider", "Filled"],
                   ["New", "Partially Filled", "To Provider", "Rejected", "Filled"], ["To Provider"],
                   ["To Provider", "Rejected"], ["To Provider", "Filled"], ["New", "To Provider"],
@@ -21,26 +23,20 @@ class Request():
     def generation_request_insert(self):
         for i in range(3000):
             if i < 1499:
-                string_insert = "db.orders.insert( { " + "provider: " + '"' + self.fxopen.provider() + '"' + " , id: " + '"' + self.fxopen.id() + '"' + \
-                                " , type: " + '"' + self.fxopen.type() + '"' + " , price: " + self.fxopen.price() + " , direction: " + '"' + self.fxopen.direction() + '"' + \
-                                " , currency: " + '"' + self.fxopen.currency() + '"' + " , duration: " + '"' + self.fxopen.duration() + '"' + " ,  comment_length: " + '"' + \
-                                self.fxopen.comment_length() + '"' + " , comment: " + '"' + self.fxopen.comment() + '"' + " , tag_length: " + '"' + self.fxopen.tag_length() + \
-                                '"' + " , tag: " + '"' + self.fxopen.tag() + '"' + " , magic_number: " + '"' + self.fxopen.magicalNumber() + '" ,'
+                string_insert = 'db.orders.insert( { provider: ' + '"' + self.fxopen.provider() + '"' + ', id: ' + '"' + self.fxopen.id() + '"' + ', type: ' + '"' + self.fxopen.type() + '"' + ', price: ' + self.fxopen.price() + ', direction: ' + '"' + self.fxopen.direction() + '"' ', currency: ' + '"' + self.fxopen.currency() + '"' + ' ,duration: ' + '"' + self.fxopen.duration() + '"' + ' ,comment_length: ' + '"' + self.fxopen.comment_length() + '"' + ' ,comment: ' + '"' + self.fxopen.comment() + '"' + ', tag_length: ' + '"' + self.fxopen.tag_length() + '"' + ', tag: ' + '"' + self.fxopen.tag() + '"' + ' ,magic_number: ' + '"' + self.fxopen.magicalNumber() + '" ,'
             else:
-                string_insert = "db.orders.insert( { " + "provider: " + '"' + self.fxcm.provider() + '"' + " , id: " + '"' + self.fxcm.id() + '"' + " ," \
-                                                                                                                                                    " type: " + '"' + self.fxcm.type() + '"' + " , price: " + self.fxcm.price() + " , direction: " + '"' + self.fxcm.direction() + '"' + \
-                                " , currency: " + '"' + self.fxcm.currency() + '"' + ", decsription: " + '"' + self.fxcm.decsription() + '" ,'
+                string_insert = 'db.orders.insert( { provider: ' + '"' + self.fxcm.provider() + '"' + ', id: ' + '"' + self.fxcm.id() + '"' + ', type: ' + '"' + self.fxcm.type() + '"' + ', price: ' + self.fxcm.price() + ', direction: ' + '"' + self.fxcm.direction() + '", currency: ' + '"' + self.fxcm.currency() + '"' + ', decsription: ' + '"' + self.fxcm.decsription() + '" ,'
             a = random.randint(0, 12)
             b = len(self.status[a])
             for j in range(b):
-                string_insert=string_insert + " date: new Date(" + self.fxcm.date_time() + ')' + " , status: " + '"' + self.status[a][j] + '"' + ' }' + ' )'
-                print string_insert
-                self.__insert_request(string_insert)
-
+                string_insert_finally=string_insert + ' date: new Date(' + self.fxcm.date_time() + '), status: ' + '"' + self.status[a][j] + '"' + ' }' + ' )'
+                print self.__insert_request(string_insert_finally)
+                string_insert_finally=''
 
     def __insert_request(self,string_insert):
         operation ="echo '" + string_insert +"' > .q && mongo < .q"
-        commands.getoutput(operation)
+        print operation
+        return commands.getoutput(operation)
 
     def id_by_status(self):
         statuses = ["New", "To Provider", "Partially Filled", "Filled", "Rejected"]
