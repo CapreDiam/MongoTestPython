@@ -6,8 +6,6 @@ import random
 
 
 class Request():
-    results_db = []
-    results_python = []
 
     def __init__(self):
         fxcm = FXCMOrder()
