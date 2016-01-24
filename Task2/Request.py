@@ -22,7 +22,7 @@ class Request:
             if i < 1499:
                 string_insert = 'db.orders.insert( { provider: ' + '"' + self.fxopen.provider() + '"' + ', id: ' + '"' + self.fxopen.id() + '"' + ', type: ' + '"' + self.fxopen.type() + '"' + ', price: ' + self.fxopen.price() + ', direction: ' + '"' + self.fxopen.direction() + '"' ', currency: ' + '"' + self.fxopen.currency() + '"' + ' ,duration: ' + '"' + self.fxopen.duration() + '"' + ' ,comment_length: ' + '"' + self.fxopen.comment_length() + '"' + ' ,comment: ' + '"' + self.fxopen.comment() + '"' + ', tag_length: ' + '"' + self.fxopen.tag_length() + '"' + ', tag: ' + '"' + self.fxopen.tag() + '"' + ' ,magic_number: ' + '"' + self.fxopen.magicalNumber() + '" ,'
             else:
-                string_insert = 'db.orders.insert( { provider: ' + '"' + self.fxcm.provider() + '"' + ', id: ' + '"' + self.fxcm.id() + '"' + ', type: ' + '"' + self.fxcm.type() + '"' + ', price: ' + self.fxcm.price() + ', direction: ' + '"' + self.fxcm.direction() + '", currency: ' + '"' + self.fxcm.currency() + '"' + ', decsription: ' + '"' + self.fxcm.decsription() + '" ,'
+                string_insert = 'db.orders.insert( { provider: ' + '"' + self.fxcm.provider() + '"' + ', id: ' + '"' + self.fxcm.id() + '"' + ', type: ' + '"' + self.fxcm.type() + '"' + ', price: ' + self.fxcm.price() + ', direction: ' + '"' + self.fxcm.direction() + '", currency: ' + '"' + self.fxcm.currency() + '"' + ', decsription: ' + '"' + self.fxcm.description() + '" ,'
             a = random.randint(0, 12)
             b = len(self.status[a])
             for j in range(b):
