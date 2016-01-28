@@ -1,0 +1,11 @@
+class PerformanceRequest:
+
+
+    def __performance_request(self, string_insert):
+        pass
+
+    def get_result(self):
+        pass
+
+    def __prepare_result(self):
+        pass
