@@ -8,25 +8,25 @@ class GenerationOrder:
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def provider_generated(self):
+    def __provider_generated(self):
         pass
 
     @abstractmethod
-    def type_generated(self):
+    def __type_generated(self):
         pass
 
     @abstractmethod
-    def direction_generated(self):
+    def __direction_generated(self):
         pass
 
     @abstractmethod
-    def id_generated(self):
+    def __id_generated(self):
         pass
 
     @abstractmethod
-    def price_generated(self):
+    def __price_generated(self):
         pass
 
     @abstractmethod
-    def currency_generated(self):
+    def __currency_generated(self):
         pass
